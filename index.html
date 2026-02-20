@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ComplyRight</title>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4B0082">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo-section">
+        <img src="logo.png" class="logo">
+        <span class="brand">ComplyRight</span>
+    </div>
+</header>
+
+<div class="main-container">
+
+    <div class="card">
+
+        <h2>India Compliance Engine</h2>
+        <p class="subtitle">
+            Smart statutory compliance covering Tax, GST, MCA, Labour & Municipal regulations.
+        </p>
+
+        <div class="grid">
+
+            <div class="form-group">
+                <label>Entity Type</label>
+                <select id="entity">
+                    <option>Proprietorship</option>
+                    <option>Partnership Firm</option>
+                    <option>LLP</option>
+                    <option>Private Limited Company</option>
+                    <option>Public Limited Company</option>
+                    <option>Trust</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Annual Turnover (₹)</label>
+                <input type="number" id="turnover">
+            </div>
+
+            <div class="form-group">
+                <label>No. of Employees</label>
+                <input type="number" id="employees">
+            </div>
+
+            <div class="form-group">
+                <label>GST Registered?</label>
+                <select id="gst">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+
+        </div>
+
+        <button onclick="generateCompliance()">Generate Compliance Report</button>
+
+        <div id="output"></div>
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js');
+}
+</script>
+
+</body>
+</html>
